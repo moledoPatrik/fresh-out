@@ -9,10 +9,10 @@ class HouseFoodsController < ApplicationController
       @foods = policy_scope(HouseFood).order("expiry_date")
     end
     flash.delete(:alert)
-    if session[:bought_foods].size > 0
-      flash[:alert] = "#{session[:bought_foods].size} foods added to kitchen"
-      session[:bought_foods] = []
-    end
+    # if session[:bought_foods].size > 0
+    #   flash[:alert] = "#{session[:bought_foods].size} foods added to kitchen"
+    #   session[:bought_foods] = []
+    # end
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "house_foods/cards", locals: { foods: @foods }, formats: [:html] }
