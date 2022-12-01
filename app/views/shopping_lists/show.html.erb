@@ -32,12 +32,14 @@
         <% end %>
         <div class="card-product-infos">
           <% if item.user.present? %>
-            <p><%= item.user.username.capitalize%></p>
+             <h5><%= item.food.name.capitalize %></h5>
           <% end %>
-          <h1><%= item.food.name.capitalize %></h1>
+           <h6><%= item.user.username.capitalize%></h6>
           <div class="d-flex position-absolute top-0 end-0">
-            <%= render 'house_foods/form', item: item, house_food: @house_food %>
             <%= render 'destroy_item', item: item %>
+          </div>
+          <div class="d-flex position-absolute bottom-0 end-0">
+            <%= render 'house_foods/form', item: item, house_food: @house_food %>
           </div>
           <div>
             <p><%= item.comment %></p>
