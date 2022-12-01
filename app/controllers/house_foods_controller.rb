@@ -128,8 +128,8 @@ class HouseFoodsController < ApplicationController
         owned: true
       )
       # authorize @house_food
-      @house_food.save
-      @scanned_house_foods << @house_food
+      house_food.save
+      @scanned_house_foods << house_food
     end
     # bought_foods
     current_user.house.shopping_lists.first.items.each do |item|
