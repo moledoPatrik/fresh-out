@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  position: sticky;
-  top:0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   z-index: 10;
 }
 
@@ -16,7 +17,6 @@
 
 .navbar-shopping-list-link {
   color: #4EC068 !important;
-
 }
 
 .navbar-shopping-list-link-red {
