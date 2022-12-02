@@ -16,10 +16,12 @@
         <%= f.file_field :photo, style: 'display: none;', data: { action: 'input->trigger-scan-submit#triggerButton'} %>
         <%= f.submit 'scan', style: 'display: none;' %>
       <% end %>
-      <div class="spinner-border position-absolute top-0 end-0 d-none" role="status" data-trigger-scan-submit-target="loading">
-        <span class="visually-hidden">Loading...</span>
+      <div class="position-relative">
+        <div class="spinner-border position-absolute navbar-aligned-loading d-none" role="status" data-trigger-scan-submit-target="loading">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Scan</p>
       </div>
-      <p>Scan</p>
     </div>
     <div class="navbar-brand navbar-shopping-list-link navbar-icon-and-name-container navbar-shoppingcart-container">
       <div class="shoppingcart-icon">
