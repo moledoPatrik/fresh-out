@@ -1,6 +1,6 @@
 <div class="container" data-controller="search-foods">
   <div class="info">
-    <h1 style = "color:#73c070">Inventory <%= link_to new_house_food_path  do%>
+    <h1 style = "color:#73c070">Kitchen <%= link_to new_house_food_path  do%>
         <i class="fa-sharp fa-solid fa-plus" style = "color:#73c070"></i>
       <% end %></h1>
     <div class="mt-2">
@@ -22,11 +22,11 @@
             <%#= f.association :food, %>
             <%= hidden_field_tag :food_id, @searched_food.id %>
             <%= button_tag "Add To List", type: 'submit'%>
-            </h4>
-            <% end %>
-        </div>
-      <% else %>
-        <%= render "cards", foods: @foods %>
-      <% end %>
-    </div>
+          </h4>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render "cards", foods: @foods %>
+    <% end %>
   </div>
+</div>
