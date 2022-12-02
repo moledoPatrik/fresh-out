@@ -8,14 +8,14 @@
 .delete-button {
   color: #F4F4F4;
   border: none;
-  background-color: #4EC068;
+  background-color: red;
   font-size: 24px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
+  width: 4vmax;
+  height: 4vmax;
+  padding-top: -3px;
   text-align: center;
-  margin-right: 8px;
-  margin-top: 8px;
+  margin-right: 14px;
+  margin-top: 13px;
   border-radius: 5px;
 }
 
@@ -23,12 +23,15 @@
   color: #F4F4F4 !important;
   border: none;
   background-color: #4EC068;
-  font-size: 15px;
-  height: 32px;
-  padding: 0;
+  font-size: 16px;
+  height: 49px;
+  width: 12vmax;
+  padding-top: 12px;
   text-align: center;
-  margin-right: 8px;
-  margin-left: 8px;
-  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
+  position: absolute;
+  bottom: 19px;
+  right: 13px;
 }
