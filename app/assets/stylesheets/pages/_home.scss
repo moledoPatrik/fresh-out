@@ -27,3 +27,13 @@
   display: block;
   margin-top: -0.3vmax;
 }
+
+.home-image {
+  width: 50%;
+}
+
+@media (min-width: 400px) {
+  .home-image {
+    width: 25%;
+  }
+}
