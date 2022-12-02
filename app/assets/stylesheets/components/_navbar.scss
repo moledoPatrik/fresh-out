@@ -1,9 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  position: sticky;
-  top:0;
+  background: #4EC068;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   z-index: 10;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,8 +17,11 @@
 }
 
 .navbar-shopping-list-link {
-  color: #4EC068 !important;
+  color: #e9eaea !important;
 
+  p {
+    font-size: 16px;
+  }
 }
 
 .navbar-shopping-list-link-red {
@@ -25,5 +30,19 @@
 }
 
 .list_number {
-  font-size: 25px;
+  // font-size: 25px;
+}
+
+.shopping-list-index-container {
+  margin-top: 163px
+}
+
+.navbar-icon-and-name-container {
+  margin-bottom: -8%;
+}
+
+i.navbar-icon {
+  display: block;
+  text-align: center;
+  width: 56px;
 }
