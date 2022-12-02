@@ -1,5 +1,6 @@
 class ShoppingListsController < ApplicationController
   def show
+    flash.delete(:alert)
     @shopping_list = ShoppingList.find(params[:id])
     @items = Item.all
     @house_food = HouseFood.new
