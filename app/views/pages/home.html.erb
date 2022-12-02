@@ -9,13 +9,13 @@
       <% if @foods.any?  %>
         <%= link_to house_foods_path do %>
           <div class="button warning-button">
-            <h3>Inventory</h3>
+            <h3>Kitchen</h3>
             <p> Expiring Foods: <%= @foods.count  %> </p>
           </div>
         <% end %>
       <% else %>
         <%= link_to house_foods_path , class: "button inventory-button" do %>
-          <p>Inventory</p>
+          <p>Kitchen</p>
         <% end %>
       <% end %>
     </div>
