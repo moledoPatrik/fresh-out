@@ -18,7 +18,7 @@ export default class extends Controller {
       .then((data) => {
         Toastify({
           text: "Added to shopping list.",
-          duration: 3000,
+          duration: 1150,
           destination: this.formTarget.action,
           newWindow: true,
           close: true,
