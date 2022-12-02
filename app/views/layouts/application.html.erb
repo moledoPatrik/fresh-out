@@ -14,6 +14,7 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
+    <%= render 'shared/ios_pwa_links' %>
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
@@ -31,7 +32,6 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <%= render 'shared/ios_pwa_links' %>
     <%= render "shared/flashes" %>
     <%= yield %>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

@@ -1,6 +1,5 @@
 class HouseFoodsController < ApplicationController
   skip_after_action :verify_authorized, only: :scan
-
   def index
     if params[:query].present?
       @foods = policy_scope(HouseFood).search_for_name_and_category(params[:query]).order("expiry_date")
@@ -9,10 +8,12 @@ class HouseFoodsController < ApplicationController
       @foods = policy_scope(HouseFood).order("expiry_date")
     end
     flash.delete(:alert)
-    # if session[:bought_foods].size > 0
-    #   flash[:alert] = "#{session[:bought_foods].size} foods added to kitchen"
-    #   session[:bought_foods] = []
-    # end
+    if session[:bought_foods].present?
+      if session[:bought_foods].size > 0
+        flash[:alert] = "#{session[:bought_foods].size} foods added to kitchen"
+        session[:bought_foods] = []
+      end
+    end
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "house_foods/cards", locals: { foods: @foods }, formats: [:html] }
@@ -127,8 +128,8 @@ class HouseFoodsController < ApplicationController
         owned: true
       )
       # authorize @house_food
-      @house_food.save
-      @scanned_house_foods << @house_food
+      house_food.save
+      @scanned_house_foods << house_food
     end
     # bought_foods
     current_user.house.shopping_lists.first.items.each do |item|
