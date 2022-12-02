@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="info">
-    <h1 class="text-center mt-3" style = "color:#73c070" >Shopping List<%= link_to new_item_path, class: 'text-decoration-none'  do%>
+  <div class="list-info">
+    <h1 class="text-center mt-3">Shopping List<%= link_to new_item_path, class: 'text-decoration-none'  do%>
         <i class="fa-sharp fa-solid fa-plus" style = "color:#73c070"></i>
       <% end %>
     </h1>
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  <div class="shopping-list-index-container">
+  <div>
     <% @items.each do |item| %>
       <div class="card-product mt-3 position-relative">
         <% if item.food.photo.attached? %>
@@ -32,9 +32,9 @@
         <% end %>
         <div class="card-product-infos">
           <% if item.user.present? %>
-            <h5><%= item.food.name.capitalize %></h5>
+             <h5><%= item.food.name.capitalize %></h5>
           <% end %>
-          <h6><%= item.user.username.capitalize%></h6>
+           <h6><%= item.user.username.capitalize%></h6>
           <div class="d-flex position-absolute top-0 end-0">
             <%= render 'destroy_item', item: item %>
           </div>

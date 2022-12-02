@@ -1,9 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #4EC068 ;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  background: white;
+  position: sticky;
+  top:0;
   z-index: 10;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .navbar-shopping-list-link {
-  color: #e9eaea !important;
+  color: #4EC068 !important;
 
 }
 
@@ -27,15 +26,4 @@
 
 .list_number {
   font-size: 25px;
-}
-.shopping-list-index-container{
-  margin-top: 163px
-}
-.navbar-icon-and-name-container {
-  margin-bottom: -8%;
-}
-i.navbar-icon {
-  display: block;
-  text-align: center;
-  width: 56px;
 }
