@@ -15,7 +15,7 @@
       <% end %>
     </div>
   </div>
-  <div data-search-foods-target="cards" class ="cards" data-controller="toast">
+  <div data-search-foods-target="cards" class ="cards mb-5" data-controller="toast">
     <% if @foods.blank? %>
       <div class="empty ">
         <h4>Sorry no <%= params[:query].pluralize  %><%= simple_form_for @item, data: { action: 'submit->toast#addedToShoppingList', toast_target: 'form'} do |f| %>
