@@ -29,15 +29,16 @@
           <% if @unseen_items != nil  %>
             <% if @unseen_items.any? %>
               <%=  link_to  shopping_list_path(current_user.house.shopping_lists.first), class: 'navbar-shopping-list-link-red' do %>
+                <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count %></span>  </i>
               <% end %>
             <% else %>
               <%=  link_to  shopping_list_path(current_user.house.shopping_lists.first), class: 'navbar-shopping-list-link' do %>
+                <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count %></span>  </i>
               <% end %>
             <% end %>
           <% end %>
         <% end %>
       </div>
-      <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count %></span>  </i>
       <p>Cart</p>
     </div>
   </div>
