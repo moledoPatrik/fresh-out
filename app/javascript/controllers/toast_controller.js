@@ -19,14 +19,16 @@ export default class extends Controller {
         Toastify({
           text: "Added to shopping list.",
           duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
+          destination: this.formTarget.action,
           newWindow: true,
           close: true,
           gravity: "bottom", // `top` or `bottom`
           position: "right", // `left`, `center` or `right`
           stopOnFocus: true, // Prevents dismissing of toast on hover
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "white",
+            color: '#4EC068',
+            border: "1px solid #4EC068"
           },
         }).showToast();
       })
