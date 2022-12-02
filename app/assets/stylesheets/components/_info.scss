@@ -1,12 +1,13 @@
-.info {
-  position: sticky;
+.info{
+  position: fixed;
   z-index: 10;
-  background-color: $light-gray;
-  top: 60px;
+  background-color: #F4F4F4;
+  top: 0;
   padding-top: 16px;
+  padding-bottom: 1px;
   left: 0;
   right: 0;
-  margin-inline: -16px;
+  margin-inline: -11px;
   padding-inline: 16px;
 }
 
