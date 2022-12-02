@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="list-info">
-    <h1 class="text-center mt-3">Shopping List<%= link_to new_item_path, class: 'text-decoration-none'  do%>
+  <div class="list-info  my-4">
+    <h1 class="shopping-list-heading ms-1">Shopping List<%= link_to new_item_path, class: 'text-decoration-none ms-1'  do%>
         <i class="fa-sharp fa-solid fa-plus" style = "color:#73c070"></i>
       <% end %>
     </h1>
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around mt-4">
       <%= simple_form_for @shopping_list, url:store_all_shopping_list_path do |f| %>
-        <%= f.button :button, class: "button small-button", style: 'height: 100%; width: auto;' do %>
+        <%= f.button :button, class: "button", style: 'height: 100%; width: auto; border: none;' do %>
           Add all to kitchen
         <% end %>
       <% end %>
       <div data-controller="trigger-scan-submit" class="position-relative">
         <%= form_with url: '/', method: :post, data: { trigger_scan_submit_target: 'form' } do |f| %>
-          <%= label_tag :photo, "Scan receipt", class: 'button small-button', style: 'height: 100%; width: auto;' %>
+          <%= label_tag :photo, "Scan receipt", class: 'button scan-button', style: 'height: 100%; width: auto;' %>
           <%= f.file_field :photo, style: 'display: none;', data: { action: 'input->trigger-scan-submit#triggerButton'} %>
           <%= f.submit 'scan', style: 'display: none;' %>
         <% end %>
@@ -24,26 +24,23 @@
   </div>
   <div>
     <% @items.each do |item| %>
-      <div class="card-product mt-3 position-relative">
-        <% if item.food.photo.attached? %>
-          <%= cl_image_tag item.food.photo.key, alt: "text" %>
-        <% else %>
-          <%= image_tag 'no-image.jpg' %>
-        <% end %>
-        <div class="card-product-infos">
-          <% if item.user.present? %>
-             <h5><%= item.food.name.capitalize %></h5>
+      <div class="card-shopping mb-4 d-flex">
+        <div class="card-shopping-details d-flex align-items-center gap-3">
+          <% if item.food.photo.attached? %>
+            <%= cl_image_tag item.food.photo.key, alt: "text" %>
+          <% else %>
+            <%= image_tag 'no-image.jpg' %>
           <% end %>
-           <h6><%= item.user.username.capitalize%></h6>
-          <div class="d-flex position-absolute top-0 end-0">
-            <%= render 'destroy_item', item: item %>
-          </div>
-          <div class="d-flex position-absolute bottom-0 end-0">
-            <%= render 'house_foods/form', item: item, house_food: @house_food %>
-          </div>
           <div>
-            <p><%= item.comment %></p>
+            <% if item.user.present? %>
+              <h5><%= item.food.name.capitalize %></h5>
+            <% end %>
+            <h6><%= item.user.username.capitalize%></h6>
           </div>
+        </div>
+        <div class="card-shopping-buttons d-flex align-items-center gap-3 pe-2">
+          <%= render 'house_foods/form', item: item, house_food: @house_food %>
+          <%= render 'destroy_item', item: item %>
         </div>
       </div>
     <% end %>

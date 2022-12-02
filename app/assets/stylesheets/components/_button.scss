@@ -13,16 +13,23 @@
   transition: 0.30s;
   color: white;
   font-size: 16.7px;
+
   &:hover {
     color: #a3a3a3;
     background-color: rgb(240, 240, 240);
   }
+
   &.small-button {
-    width: 80px;
-    height: 35px;
-    padding: 6px;
+    width: auto;
+    height: auto;
+    padding: 4px 8px;
     box-shadow: $box-shadow;
     text-shadow: $text-shadow;
+    border: none;
+  }
+
+  &.scan-button {
+    width: auto;
   }
 }
 
@@ -40,10 +47,12 @@
   text-decoration: none;
   padding: 16px 24px;
   transition: 0.30s;
+
   &:hover {
     color: #a3a3a3;
     background-color: rgb(240, 240, 240);
   }
+
   h3 {
     text-decoration: none;
   }
@@ -57,9 +66,9 @@
   right: -9px;
   font-size: 85px;
   font-weight: bold;
-  text-shadow:$text-shadow;
+  text-shadow: $text-shadow;
 }
 
-.button-container{
-  margin-top:-5%;
+.button-container {
+  margin-top: -5%;
 }

@@ -8,7 +8,8 @@
   position: relative;
   margin-bottom: 10px;
 }
-.card-category img{
+
+.card-category img {
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -19,12 +20,14 @@
   color: black;
   margin-left: 7px;
 }
+
 .card-category h5 {
   font-family: $body-font-family ;
   font-size: 19px;
   width: 78%;
 }
-.card-category h2{
+
+.card-category h2 {
   font-family: $heading-font-family ;
   width: 100%;
 }
@@ -84,6 +87,7 @@
   bottom: 80%;
   margin-left: 90%;
 }
+
 [id="2"] {
   border: solid 5px rgba(217, 4, 4, 0.848);
 }
@@ -142,14 +146,62 @@
   padding: 8px;
   font-size: 20px;
 }
-.card-product h5, h6 {
+
+.card-product h5,
+h6 {
   font-family: $card-font-family;
 }
+
+// ---------
+
+.card-shopping {
+  overflow: hidden;
+  height: 60px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-shopping img {
+  height: 100%;
+  width: 60px;
+  object-fit: cover;
+}
+
+.card-shopping h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  font-family: $card-font-family;
+}
+
+.card-shopping p {
+  font-size: 12px;
+  opacity: .7;
+  margin-bottom: 5;
+  margin-top: 8px;
+}
+
+.card-shopping .card-shopping-infos {
+  padding: 8px;
+  font-size: 20px;
+}
+
+.card-shopping h5,
+h6 {
+  font-family: $card-font-family;
+}
+
+// ---------
+
 .card-small-input {
   * {
     width: 100%;
   }
 }
+
 .empty {
   position: absolute;
   margin-right: 10px;
