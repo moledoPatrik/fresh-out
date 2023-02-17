@@ -23,9 +23,16 @@
         <p>Scan</p>
       </div>
     </div>
-    <%= link_to shopping_list_path(current_user.house.shopping_lists.first), class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
-      <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count if user_signed_in?%></span>  </i>
-      <p>Cart</p>
+    <% if user_signed_in? %>
+      <%= link_to shopping_list_path(current_user.house.shopping_lists.first), class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
+        <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count %></span>  </i>
+        <p>Cart</p>
+      <% end %>
+    <% else %>
+      <%= link_to '#', class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
+        <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"></span>  </i>
+        <p>Cart</p>
+      <% end %>
     <% end %>
   </div>
 </div>
