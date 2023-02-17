@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # end
 
   def add_header_text
-    @unseen_items = current_user.house.items.where.not(user: current_user).where.not(seen: true)
+    @unseen_items = current_user.house.items.where.not(user: current_user).where.not(seen: true) if user_signed_in?
   end
 
   private
