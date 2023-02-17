@@ -1,46 +1,31 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to house_foods_path, class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
-    <i class="fa-solid fa-utensils navbar-icon"></i>
-    <p>Kitchen</p>
-  <% end %>
-  <%= link_to new_house_food_path, class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
-    <i class="fa-solid fa-plus navbar-icon"></i>
-    <p>Add Food</p>
-  <% end %>
-  <div data-controller="trigger-scan-submit" class="navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center">
-    <%= form_with url: '/', method: :post, data: { trigger_scan_submit_target: 'form' } do |f| %>
-      <%= label_tag :photo, class: 'd-inline' do %>
-        <i class="fa-solid fa-receipt navbar-icon"></i>
-      <% end %>
-      <%= f.file_field :photo, style: 'display: none;', data: { action: 'input->trigger-scan-submit#triggerButton'} %>
-      <%= f.submit 'scan', style: 'display: none;' %>
-    <% end %>
-    <div class="position-relative">
-      <div class="spinner-border position-absolute navbar-aligned-loading d-none" role="status" data-trigger-scan-submit-target="loading">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-      <p>Scan</p>
-    </div>
-  </div>
-  <%= link_to shopping_list_path(current_user.house.shopping_lists.first), class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
-    <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count if user_signed_in?%></span>  </i>
-    <p>Cart</p>
-  <% end %>
-</div>
 <div class="container-fluid">
-  <div class="navbar-brand navbar-shopping-list-link navbar-icon-and-name-container navbar-shoppingcart-container">
-    <div class="shoppingcart-icon">
-      <% if user_signed_in? %>
-        <% if @unseen_items != nil  %>
-          <% if @unseen_items.any? %>
-            <%=  link_to  shopping_list_path(current_user.house.shopping_lists.first), class: 'navbar-shopping-list-link-red' do %>
-            <% end %>
-          <% else %>
-            <%=  link_to  shopping_list_path(current_user.house.shopping_lists.first), class: 'navbar-shopping-list-link' do %>
-            <% end %>
-          <% end %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to house_foods_path, class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
+      <i class="fa-solid fa-utensils navbar-icon"></i>
+      <p>Kitchen</p>
+    <% end %>
+    <%= link_to new_house_food_path, class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
+      <i class="fa-solid fa-plus navbar-icon"></i>
+      <p>Add Food</p>
+    <% end %>
+    <div data-controller="trigger-scan-submit" class="navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center">
+      <%= form_with url: '/', method: :post, data: { trigger_scan_submit_target: 'form' } do |f| %>
+        <%= label_tag :photo, class: 'd-inline' do %>
+          <i class="fa-solid fa-receipt navbar-icon"></i>
         <% end %>
+        <%= f.file_field :photo, style: 'display: none;', data: { action: 'input->trigger-scan-submit#triggerButton'} %>
+        <%= f.submit 'scan', style: 'display: none;' %>
       <% end %>
+      <div class="position-relative">
+        <div class="spinner-border position-absolute navbar-aligned-loading d-none" role="status" data-trigger-scan-submit-target="loading">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Scan</p>
+      </div>
     </div>
+    <%= link_to shopping_list_path(current_user.house.shopping_lists.first), class: "navbar-brand navbar-shopping-list-link navbar-icon-and-name-container text-align-center" do %>
+      <i class="fa-solid fa-basket-shopping navbar-icon text-align-center"> <span class="list_number"><%= current_user.house.shopping_lists.first.items.count if user_signed_in?%></span>  </i>
+      <p>Cart</p>
+    <% end %>
   </div>
 </div>
