@@ -20,6 +20,11 @@
           <% end %>
         <% end %>
       </div>
+    <% else %>
+      <div class="d-flex flex-column align-items-center gap-2 button-container">
+        <%= link_to 'Sign up', new_user_registration_path, class: 'button inventory-button' %>
+        <%= link_to 'Log in', new_user_session_path, class: 'button' %>
+      </div>
     <% end %>
   </div>
 </div>
