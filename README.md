@@ -2,7 +2,8 @@
 
 Mobile first web site that helps in food wasting prevention with an inventory system.
 
-<img src="app/assets/images/freshout-homepage.png">
+<img src="app/assets/images/freshout-homepage.png" width="400" height="700"> <img src="app/assets/images/freshout-demo.png" height="700" width="400">
+
 
 ## How to run
 ### Setup
